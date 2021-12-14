@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginBottom="60dp"
-        android:text="DotNet Quizz"
+        android:text="@string/dotnet_quizz"
         android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold" />
@@ -38,19 +38,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Priviet!"
+                android:text="@string/priviet"
                 android:textColor="@android:color/black"
                 android:textSize="40sp"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Enter your name bro/sis"
+                android:text="@string/enter_your_name_bro_sis"
                 android:textColor="@android:color/black"
                 android:textSize="15sp"
-                ></TextView>
+                />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -59,24 +59,23 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 >
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name"
+                    android:hint="@string/name"
                     android:textColor="@android:color/black"
                     android:textColorHint="@android:color/black"
-                    ></androidx.appcompat.widget.AppCompatEditText>
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/btn_start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
                 android:layout_marginTop="15dp"
                 android:background="@color/design_default_color_on_primary"
-                android:text="Start"
-                >
-            </Button>
+                android:text="@string/start"
+                android:textColor="@android:color/black" />
 
         </LinearLayout>
 
