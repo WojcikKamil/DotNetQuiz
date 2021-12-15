@@ -16,13 +16,26 @@ class ResultActivity : AppCompatActivity() {
         val totalQuestion = intent.getIntExtra(QuestionList.TOTAL_QUESTIONS, 0)
         val correctAnswer = intent.getIntExtra(QuestionList.CORRECT_ANSWERS,0)
         val wrongAnswer = intent.getIntExtra(QuestionList.WRONG_ANSWERS,0)
-        var grade = (correctAnswer *100)/ totalQuestion
+
+        var gradeDiff = (correctAnswer - wrongAnswer)
+        var grade = (gradeDiff * 100)/ totalQuestion
+
+        if(grade < 0){
+            tv_grade.text = "Failed, more negative than possitive answers :("
+        } else if(grade == 0){
+            tv_grade.text = "So so, ZERO my friend. Failed"
+        } else if(grade in 52..70){
+            tv_grade.text = "Passed, the grade is 3"
+        } else if (grade in 71..90){
+            tv_grade.text = "Passed, the grade is 4. Good job!"
+        } else if (grade in 91..100){
+            tv_grade.text = "Passed! Congratulation! The grade is 5! You re amazing ;>"
+        }
+
 
         tv_score.text = "Correct answers $correctAnswer"
 
         tv_wrong.text = "Wrong answers: $wrongAnswer"
-
-        tv_grade.text = "Your score is: $grade %"
 
         btn_finish.setOnClickListener{
             startActivity(Intent(this, MainActivity::class.java))
